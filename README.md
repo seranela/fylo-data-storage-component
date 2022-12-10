@@ -21,8 +21,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/fylo-data-storage-component-srt3sMB_ex](https://www.frontendmentor.io/solutions/fylo-data-storage-component-srt3sMB_ex)
+- Live Site URL: [https://seranela.github.io/fylo-data-storage-component/](https://seranela.github.io/fylo-data-storage-component/)
 
 ## My process
 
