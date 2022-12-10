@@ -1,0 +1,229 @@
+/* Variables */
+
+:root {
+	/* Colors */
+	--color-neutral-pale-blue: hsl(243, 100%, 93%);
+	--color-primary-gray-blue: hsl(229, 7%, 48%); /* WCAG-AA Adjusted */
+	--color-primary-dark-blue: hsl(228, 56%, 26%);
+	--color-primary-extra-dark-blue: hsl(229, 57%, 11%);
+	--gradient-progress-bar: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+	/* Fonts */
+	--font-stack: 'Raleway', sans-serif;
+	/* Weights: 400, 700 */
+}
+
+/* Resets */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+body,
+p {
+	margin: 0;
+}
+
+/* Base */
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font: 400 0.875rem var(--font-stack);
+	background:
+		var(--color-primary-extra-dark-blue)
+		url(../images/bg-mobile.png) center / cover no-repeat;
+	color: var(--color-neutral-pale-blue);
+	text-rendering: optimizeSpeed;
+	min-height: 100vh;
+	padding: 0 1.5rem;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	max-width: 58rem;
+	margin: 0 auto;
+}
+
+/* Component */
+
+.component-top,
+.component-bottom {
+	background: var(--color-primary-dark-blue);
+	border-radius: 10px;
+	padding: 2.5rem;
+	width: 100%;
+}
+
+.component-top {
+	border-top-right-radius: 120px;
+}
+
+.component-bottom {
+	position: relative;
+	padding-bottom: 3rem;
+}
+
+.logo {
+	padding-bottom: 1.8rem;
+}
+
+/* Buttons */
+
+.buttons {
+	display: flex;
+	gap: 1rem;
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--color-primary-extra-dark-blue);
+	border-radius: 10px;
+	border: 0;
+	width: 3rem;
+	height: 3rem;
+	cursor: pointer;
+}
+
+button:hover {
+	filter: brightness(180%);
+}
+
+/* Progress Bar */
+
+.progress-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+progress {
+	border: none;
+	border-radius: 13px;
+	height: 13px;
+	width: 100%;
+	background: var(--color-primary-extra-dark-blue);
+	outline: 3px solid var(--color-primary-extra-dark-blue);
+	margin: 1rem 0 0.7rem 0;
+}
+
+progress::-webkit-progress-bar {
+	border-radius: 13px;
+	background: var(--color-primary-extra-dark-blue);
+}
+
+progress::-webkit-progress-value {
+	border-radius: 13px;
+	background: var(--gradient-progress-bar);
+}
+
+progress::-moz-progress-bar {
+	border-radius: 13px;
+	background:
+		url(../images/dot.svg) calc(100% - 2px) center / 10px no-repeat,
+		var(--gradient-progress-bar);
+}
+
+.progress-label {
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.storage-left {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	color: var(--color-primary-gray-blue);
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 0.7rem 1.2rem;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	white-space: nowrap;
+}
+
+.storage-left-total {
+	color: var(--color-primary-extra-dark-blue);
+	font-size: 2.5rem;
+}
+
+/* Screen readers */
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+ }
+
+/* Responsive media queries */
+
+@media (min-width: 576px) {
+	body {
+		background:
+			var(--color-primary-extra-dark-blue)
+			url(../images/bg-desktop.png) left bottom / contain  no-repeat;
+	}
+
+	main {
+		flex-direction: row;
+		gap: 2rem;
+	}
+
+	.component-top,
+	.component-bottom {
+		padding: 2.7rem;
+	}
+
+	.component-top {
+		width: 37%;
+	}
+
+	.component-bottom {
+		flex: 1;
+		padding-bottom: 0;
+		margin-top: 2.5rem;
+	}
+
+	.storage-left {
+		border-radius: 10px 10px 0 10px;
+		padding: 0.9rem 1.4rem;
+		top: -3rem;
+		left: calc(100% - 2.5rem);
+		transform: translateX(-100%);
+	}
+
+	.storage-left::after {
+		content: ' ';
+		position: absolute;
+		right: 0;
+		bottom: -23px;
+		border-top: 25px solid white;
+		border-left: 25px solid transparent;
+		border-bottom: none;
+	}
+}
