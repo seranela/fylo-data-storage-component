@@ -127,7 +127,9 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
 	border-radius: 13px;
-	background: var(--gradient-progress-bar);
+	background:
+		url(../images/dot.svg) calc(100% - 2px) center / 10px no-repeat,
+		var(--gradient-progress-bar);
 }
 
 progress::-moz-progress-bar {
